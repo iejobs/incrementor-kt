@@ -8,19 +8,19 @@ package ru.main;
  */
 class Incrementor {
     /**
-     * @var Int Число, над которым будут производиться все вычисления в классе
+     * Число, над которым будут производиться все вычисления в классе
      */
     private var number: Int = 0
 
     /**
-     * @var Int Максимально допустимое значение для параметра {@link Incrementor#number}
-     *          По умолчанию {@value Int#MAX_VALUE}
+     * Максимально допустимое значение для параметра {@link Incrementor#number}
+     * По умолчанию {@value Int#MAX_VALUE}
      */
     private var maximumNumber: Int = Int.MAX_VALUE
 
     /**
-     * @var Boolean Достигло ли значение свойства {@link Incrementor#number}
-     *              максимально допустимого значения {@link Incrementor#maximumNumber}
+     * Достигло ли значение свойства {@link Incrementor#number}
+     * максимально допустимого значения {@link Incrementor#maximumNumber}
      */
     private val isMaxNumberReached: Boolean
         get() = number.equals(maximumNumber)
@@ -54,6 +54,8 @@ class Incrementor {
      * тогда обнуляем число {@link Increment#number}
      *
      * @param maximumValue Int Число > 0
+     *
+     * @throws IllegalArgumentException Бросается при попытке установить значение < 0
      */
     fun setMaximumValue(maximumValue: Int) {
         if (maximumValue < 0) {
